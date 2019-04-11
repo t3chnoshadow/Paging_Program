@@ -313,6 +313,7 @@ namespace Paging_Program
         private void btn_Start_Click(object sender, EventArgs e)
         {
             timer1.Start();
+            //test comment to see if i can commit
         }
     }
 }
