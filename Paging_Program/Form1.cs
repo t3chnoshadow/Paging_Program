@@ -154,6 +154,7 @@ namespace Paging_Program
         int tick = 0;
         int counter = 0;
         int pos = 1000;
+        Boolean changed = false;
         public string[] page = new string[12];
         public int[] r = new int[12];
         private void timer1_Tick(object sender, EventArgs e)
@@ -167,79 +168,89 @@ namespace Paging_Program
                 clock(tick);
                 if (page.Contains(AccessSequanceListBox.Items[counter].ToString()))
                 {
+                    listBox1.Items.Add("test passed");
 
                     pos = Array.IndexOf(page, AccessSequanceListBox.Items[counter].ToString());
 
                     if (tick == pos)
                     {
+                        listBox1.Items.Add("pos of value is : " + pos);
+                        listBox1.Items.Add("searching for val");
                         r[pos] = 1;
                         if (pos == 0)
                         {
                             lblF0.Text = AccessSequanceListBox.Items[counter].ToString() + " || " + r[pos];
+                            changed = true;
                         }
                         else if (pos == 1)
                         {
                             lblF1.Text = AccessSequanceListBox.Items[counter].ToString() + " || " + r[pos];
+                            changed = true;
                         }
                         else if (pos == 2)
                         {
                             lblF2.Text = AccessSequanceListBox.Items[counter].ToString() + " || " + r[pos];
+                            changed = true;
                         }
                         else if (pos == 3)
                         {
                             lblF3.Text = AccessSequanceListBox.Items[counter].ToString() + " || " + r[pos];
+                            changed = true;
                         }
                         else if (pos == 4)
                         {
                             lblF4.Text = AccessSequanceListBox.Items[counter].ToString() + " || " + r[pos];
+                            changed = true;
                         }
                         else if (pos == 5)
                         {
                             lblF5.Text = AccessSequanceListBox.Items[counter].ToString() + " || " + r[pos];
+                            changed = true;
                         }
                         else if (pos == 6)
                         {
                             lblF6.Text = AccessSequanceListBox.Items[counter].ToString() + " || " + r[pos];
+                            changed = true;
 
                         }
                         else if (pos == 7)
                         {
                             lblF7.Text = AccessSequanceListBox.Items[counter].ToString() + " || " + r[pos];
+                            changed = true;
                         }
                         else if (pos == 8)
                         {
                             lblF8.Text = AccessSequanceListBox.Items[counter].ToString() + " || " + r[pos];
+                            changed = true;
                         }
                         else if (pos == 9)
                         {
                             lblF9.Text = AccessSequanceListBox.Items[counter].ToString() + " || " + r[pos];
+                            changed = true;
                         }
                         else if (pos == 10)
                         {
                             lblF10.Text = AccessSequanceListBox.Items[counter].ToString() + " || " + r[pos];
+                            changed = true;
                         }
                         else if (pos == 11)
                         {
                             lblF11.Text = AccessSequanceListBox.Items[counter].ToString() + " || " + r[pos];
+                            changed = true;
                         }
                     }
-                    if (tick == counter - 1)
+                    if ((tick == counter-2) && (changed == true))
                     {
                         counter++;
-
-                        /*if (counter >= setsize)
-                        {
-                            counter = 0;
-                            MessageBox.Show("Done");
-                            timer1.Stop();
-                        }*/
+                        pos = 1000;
+                        changed = false;
                     }
 
                 }
-                else
+                else if (page.Contains(AccessSequanceListBox.Items[counter].ToString()) != true)
                 {
                     page[tick] = AccessSequanceListBox.Items[counter].ToString();
-                    r[tick] = 0;
+                    r[tick] = 1;
                     if (tick == 0)
                     {
                         lblF0.Text = AccessSequanceListBox.Items[counter].ToString() + " || " + r[tick];
@@ -296,6 +307,10 @@ namespace Paging_Program
                         MessageBox.Show("Done");
                         timer1.Stop();
                     }*/
+                }
+                else
+                {
+                    MessageBox.Show("Error no option selected");
                 }
 
                 tick++;

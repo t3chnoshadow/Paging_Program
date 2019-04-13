@@ -60,6 +60,7 @@
             this.lblF8 = new System.Windows.Forms.Label();
             this.lblF10 = new System.Windows.Forms.Label();
             this.lblF11 = new System.Windows.Forms.Label();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.ASUD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numHDD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Pb_clock)).BeginInit();
@@ -369,11 +370,21 @@
             this.lblF11.TabIndex = 31;
             this.lblF11.Text = "Empty";
             // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 16;
+            this.listBox1.Location = new System.Drawing.Point(886, 119);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(193, 324);
+            this.listBox1.TabIndex = 32;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(884, 560);
+            this.ClientSize = new System.Drawing.Size(1091, 560);
+            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.lblF11);
             this.Controls.Add(this.lblF10);
             this.Controls.Add(this.lblF8);
@@ -448,6 +459,7 @@
         private System.Windows.Forms.Label lblF8;
         private System.Windows.Forms.Label lblF10;
         private System.Windows.Forms.Label lblF11;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
 
