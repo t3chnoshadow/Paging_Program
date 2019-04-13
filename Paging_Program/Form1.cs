@@ -223,7 +223,7 @@ namespace Paging_Program
                             lblF11.Text = AccessSequanceListBox.Items[counter].ToString() + " || " + r[pos];
                         }
                     }
-                    if (tick == counter - 1)
+                    if (tick == counter - 2)
                     {
                         counter++;
 
