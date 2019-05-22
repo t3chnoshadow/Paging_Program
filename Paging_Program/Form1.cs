@@ -239,7 +239,7 @@ namespace Paging_Program
                             changed = true;
                         }
                     }
-                    if ((tick == counter-2) && (changed == true))
+                    if ((tick == counter-1) && (changed == true))
                     {
                         counter++;
                         pos = 1000;
@@ -250,7 +250,7 @@ namespace Paging_Program
                 else if (page.Contains(AccessSequanceListBox.Items[counter].ToString()) != true)
                 {
                     page[tick] = AccessSequanceListBox.Items[counter].ToString();
-                    r[tick] = 1;
+                    r[tick] = 0;
                     if (tick == 0)
                     {
                         lblF0.Text = AccessSequanceListBox.Items[counter].ToString() + " || " + r[tick];
