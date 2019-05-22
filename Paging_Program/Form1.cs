@@ -301,12 +301,14 @@ namespace Paging_Program
                     }
                     counter++;
 
-                    /*if (counter >= setsize)
+                    if (Array.IndexOf(r,null)>-1)
                     {
-                        counter = 0;
-                        MessageBox.Show("Done");
-                        timer1.Stop();
-                    }*/
+                        int test = Array.IndexOf(r, 0);
+                        if (test > -1)
+                        {
+                            AccessSequanceListBox.Items[test] = AccessSequanceListBox.Items[counter];
+                        }
+                    }
                 }
                 else
                 {
@@ -317,8 +319,10 @@ namespace Paging_Program
             }
             catch
             {
+               
                 timer1.Stop();
                 MessageBox.Show("Done");
+               
                 
             }
         
@@ -329,6 +333,11 @@ namespace Paging_Program
         {
             timer1.Start();
             //test comment to see if i can commit
+        }
+
+        private void Pb_clock_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
