@@ -22,12 +22,15 @@ namespace Paging_Program
             Form1 frm = new Form1();
             
             Random rnd = new Random();
-            
 
+
+            //listBox2.Items.Add(Form1.newLine);
             for (int i = 0; i < 12; i++)
             {
                 int num = rnd.Next(1000);
-                listBox1.Items.Add("1" + "/t" + frm.tlb[i] + num );
+                listBox1.Items.Add("1" );
+                listBox2.Items.Add(Form1.newLine[i]);
+                listBox3.Items.Add(num);
                
             }
 

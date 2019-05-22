@@ -20,6 +20,7 @@ namespace Paging_Program
 
         public int setsize = 0;
         public string[] tlb { get;set; }
+        public static string newLine = "";
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -261,62 +262,74 @@ namespace Paging_Program
                     if (tick%12 == 0)
                     {
                         lblF0.Text = AccessSequanceListBox.Items[counter].ToString() + " || " + r[tick % 12];
-                        tlb[tick % 1200] = AccessSequanceListBox.Items[counter].ToString();
+                       // tlb[tick % 1200] = AccessSequanceListBox.Items[counter].ToString();
+                       newLine += AccessSequanceListBox.Items[counter].ToString() + "/n";
                     }
                     else if (tick%12 == 1)
                     {
                         lblF1.Text = AccessSequanceListBox.Items[counter].ToString() + " || " + r[tick % 12];
-                        tlb[tick % 1200] = AccessSequanceListBox.Items[counter].ToString();
+                        // tlb[tick % 1200] = AccessSequanceListBox.Items[counter].ToString();
+                        newLine += AccessSequanceListBox.Items[counter].ToString() + "/n";
                     }
                     else if (tick % 12 == 2)
                     {
                         lblF2.Text = AccessSequanceListBox.Items[counter].ToString() + " || " + r[tick % 12];
-                        tlb[tick % 1200] = AccessSequanceListBox.Items[counter].ToString();
+                        //tlb[tick % 1200] = AccessSequanceListBox.Items[counter].ToString();
+                        newLine += AccessSequanceListBox.Items[counter].ToString() + "/n";
                     }
                     else if (tick % 12 == 3)
                     {
                         lblF3.Text = AccessSequanceListBox.Items[counter].ToString() + " || " + r[tick % 12];
-                        tlb[tick % 1200] = AccessSequanceListBox.Items[counter].ToString();
+                        //tlb[tick % 1200] = AccessSequanceListBox.Items[counter].ToString();
+                        newLine += AccessSequanceListBox.Items[counter].ToString() + "/n";
                     }
                     else if (tick % 12 == 4)
                     {
                         lblF4.Text = AccessSequanceListBox.Items[counter].ToString() + " || " + r[tick % 12];
-                        tlb[tick % 1200] = AccessSequanceListBox.Items[counter].ToString();
+                        //tlb[tick % 1200] = AccessSequanceListBox.Items[counter].ToString();
+                        newLine += AccessSequanceListBox.Items[counter].ToString() + "/n";
                     }
                     else if (tick % 12 == 5)
                     {
                         lblF5.Text = AccessSequanceListBox.Items[counter].ToString() + " || " + r[tick % 12];
-                        tlb[tick % 1200] = AccessSequanceListBox.Items[counter].ToString();
+                        //tlb[tick % 1200] = AccessSequanceListBox.Items[counter].ToString();
+                        newLine += AccessSequanceListBox.Items[counter].ToString() + "/n";
                     }
                     else if (tick % 12 == 6)
                     {
                         lblF6.Text = AccessSequanceListBox.Items[counter].ToString() + " || " + r[tick % 12];
-                        tlb[tick % 1200] = AccessSequanceListBox.Items[counter].ToString();
+                        // tlb[tick % 1200] = AccessSequanceListBox.Items[counter].ToString();
+                        newLine += AccessSequanceListBox.Items[counter].ToString() + "/n";
                     }
                     else if (tick % 12 == 7)
                     {
                         lblF7.Text = AccessSequanceListBox.Items[counter].ToString() + " || " + r[tick % 12];
-                        tlb[tick % 1200] = AccessSequanceListBox.Items[counter].ToString();
+                        //tlb[tick % 1200] = AccessSequanceListBox.Items[counter].ToString();
+                        newLine += AccessSequanceListBox.Items[counter].ToString() + "/n";
                     }
                     else if (tick % 12 == 8)
                     {
                         lblF8.Text = AccessSequanceListBox.Items[counter].ToString() + " || " + r[tick % 12];
-                        tlb[tick % 1200] = AccessSequanceListBox.Items[counter].ToString();
+                        //tlb[tick % 1200] = AccessSequanceListBox.Items[counter].ToString();
+                        newLine += AccessSequanceListBox.Items[counter].ToString() + "/n";
                     }
                     else if (tick % 12 == 9)
                     {
                         lblF9.Text = AccessSequanceListBox.Items[counter].ToString() + " || " + r[tick % 12];
-                        tlb[tick % 1200] = AccessSequanceListBox.Items[counter].ToString();
+                        //tlb[tick % 1200] = AccessSequanceListBox.Items[counter].ToString();
+                        newLine += AccessSequanceListBox.Items[counter].ToString() + "/n";
                     }
                     else if (tick % 12 == 10)
                     {
                         lblF10.Text = AccessSequanceListBox.Items[counter].ToString() + " || " + r[tick % 12];
-                        tlb[tick % 1200] = AccessSequanceListBox.Items[counter].ToString();
+                        //tlb[tick % 1200] = AccessSequanceListBox.Items[counter].ToString();
+                        newLine += AccessSequanceListBox.Items[counter].ToString() + "/n";
                     }
                     else if (tick % 12 == 11)
                     {
                         lblF11.Text = AccessSequanceListBox.Items[counter].ToString() + " || " + r[tick % 12];
-                        tlb[tick % 1200] = AccessSequanceListBox.Items[counter].ToString();
+                        //tlb[tick % 1200] = AccessSequanceListBox.Items[counter].ToString();
+                        newLine += AccessSequanceListBox.Items[counter].ToString() + "/n";
                         full = true;
 
                     }
@@ -403,6 +416,8 @@ namespace Paging_Program
         {
             Form2 frm2 = new Form2();
             frm2.Show();
+
+            
         }
     }
 }
