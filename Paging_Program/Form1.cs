@@ -19,6 +19,7 @@ namespace Paging_Program
         }
 
         public int setsize = 0;
+        public string[] tlb { get;set; }
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -151,12 +152,17 @@ namespace Paging_Program
             }
 
         }
+
         int tick = 0;
         int counter = 0;
         int pos = 1000;
         Boolean changed = false;
         public string[] page = new string[12];
         public int[] r = new int[12];
+        Boolean full = false;
+
+
+
         private void timer1_Tick(object sender, EventArgs e)
         {
             try
@@ -168,19 +174,20 @@ namespace Paging_Program
                 clock(tick);
                 if (page.Contains(AccessSequanceListBox.Items[counter].ToString()))
                 {
-                    listBox1.Items.Add("test passed");
-
+                    
+                    listBox1.Items.Add("searching for val");
                     pos = Array.IndexOf(page, AccessSequanceListBox.Items[counter].ToString());
-
+                    listBox1.Items.Add(tick.ToString() + "===" + pos.ToString());
                     if (tick == pos)
                     {
-                        listBox1.Items.Add("pos of value is : " + pos);
-                        listBox1.Items.Add("searching for val");
+                        listBox1.Items.Add("pos of value is : " + pos + "mod val :" + tick%12);
+                        
                         r[pos] = 1;
                         if (pos == 0)
                         {
                             lblF0.Text = AccessSequanceListBox.Items[counter].ToString() + " || " + r[pos];
                             changed = true;
+
                         }
                         else if (pos == 1)
                         {
@@ -250,54 +257,68 @@ namespace Paging_Program
                 else if (page.Contains(AccessSequanceListBox.Items[counter].ToString()) != true)
                 {
                     page[tick] = AccessSequanceListBox.Items[counter].ToString();
-                    r[tick] = 0;
-                    if (tick == 0)
+                    r[tick%12] = 0;
+                    if (tick%12 == 0)
                     {
-                        lblF0.Text = AccessSequanceListBox.Items[counter].ToString() + " || " + r[tick];
+                        lblF0.Text = AccessSequanceListBox.Items[counter].ToString() + " || " + r[tick % 12];
+                        tlb[tick % 1200] = AccessSequanceListBox.Items[counter].ToString();
                     }
-                    else if (tick == 1)
+                    else if (tick%12 == 1)
                     {
-                        lblF1.Text = AccessSequanceListBox.Items[counter].ToString() + " || " + r[tick];
+                        lblF1.Text = AccessSequanceListBox.Items[counter].ToString() + " || " + r[tick % 12];
+                        tlb[tick % 1200] = AccessSequanceListBox.Items[counter].ToString();
                     }
-                    else if (tick == 2)
+                    else if (tick % 12 == 2)
                     {
-                        lblF2.Text = AccessSequanceListBox.Items[counter].ToString() + " || " + r[tick];
+                        lblF2.Text = AccessSequanceListBox.Items[counter].ToString() + " || " + r[tick % 12];
+                        tlb[tick % 1200] = AccessSequanceListBox.Items[counter].ToString();
                     }
-                    else if (tick == 3)
+                    else if (tick % 12 == 3)
                     {
-                        lblF3.Text = AccessSequanceListBox.Items[counter].ToString() + " || " + r[tick];
+                        lblF3.Text = AccessSequanceListBox.Items[counter].ToString() + " || " + r[tick % 12];
+                        tlb[tick % 1200] = AccessSequanceListBox.Items[counter].ToString();
                     }
-                    else if (tick == 4)
+                    else if (tick % 12 == 4)
                     {
-                        lblF4.Text = AccessSequanceListBox.Items[counter].ToString() + " || " + r[tick];
+                        lblF4.Text = AccessSequanceListBox.Items[counter].ToString() + " || " + r[tick % 12];
+                        tlb[tick % 1200] = AccessSequanceListBox.Items[counter].ToString();
                     }
-                    else if (tick == 5)
+                    else if (tick % 12 == 5)
                     {
-                        lblF5.Text = AccessSequanceListBox.Items[counter].ToString() + " || " + r[tick];
+                        lblF5.Text = AccessSequanceListBox.Items[counter].ToString() + " || " + r[tick % 12];
+                        tlb[tick % 1200] = AccessSequanceListBox.Items[counter].ToString();
                     }
-                    else if (tick == 6)
+                    else if (tick % 12 == 6)
                     {
-                        lblF6.Text = AccessSequanceListBox.Items[counter].ToString() + " || " + r[tick];
+                        lblF6.Text = AccessSequanceListBox.Items[counter].ToString() + " || " + r[tick % 12];
+                        tlb[tick % 1200] = AccessSequanceListBox.Items[counter].ToString();
                     }
-                    else if (tick == 7)
+                    else if (tick % 12 == 7)
                     {
-                        lblF7.Text = AccessSequanceListBox.Items[counter].ToString() + " || " + r[tick];
+                        lblF7.Text = AccessSequanceListBox.Items[counter].ToString() + " || " + r[tick % 12];
+                        tlb[tick % 1200] = AccessSequanceListBox.Items[counter].ToString();
                     }
-                    else if (tick == 8)
+                    else if (tick % 12 == 8)
                     {
-                        lblF8.Text = AccessSequanceListBox.Items[counter].ToString() + " || " + r[tick];
+                        lblF8.Text = AccessSequanceListBox.Items[counter].ToString() + " || " + r[tick % 12];
+                        tlb[tick % 1200] = AccessSequanceListBox.Items[counter].ToString();
                     }
-                    else if (tick == 9)
+                    else if (tick % 12 == 9)
                     {
-                        lblF9.Text = AccessSequanceListBox.Items[counter].ToString() + " || " + r[tick];
+                        lblF9.Text = AccessSequanceListBox.Items[counter].ToString() + " || " + r[tick % 12];
+                        tlb[tick % 1200] = AccessSequanceListBox.Items[counter].ToString();
                     }
-                    else if (tick == 10)
+                    else if (tick % 12 == 10)
                     {
-                        lblF10.Text = AccessSequanceListBox.Items[counter].ToString() + " || " + r[tick];
+                        lblF10.Text = AccessSequanceListBox.Items[counter].ToString() + " || " + r[tick % 12];
+                        tlb[tick % 1200] = AccessSequanceListBox.Items[counter].ToString();
                     }
-                    else if (tick == 11)
+                    else if (tick % 12 == 11)
                     {
-                        lblF11.Text = AccessSequanceListBox.Items[counter].ToString() + " || " + r[tick];
+                        lblF11.Text = AccessSequanceListBox.Items[counter].ToString() + " || " + r[tick % 12];
+                        tlb[tick % 1200] = AccessSequanceListBox.Items[counter].ToString();
+                        full = true;
+
                     }
                     counter++;
 
@@ -313,6 +334,44 @@ namespace Paging_Program
                 else
                 {
                     MessageBox.Show("Error no option selected");
+                }
+
+                if (full == true)
+                {
+                    if (page.Contains(AccessSequanceListBox.Items[tick % 12].ToString()) != true)
+                    {
+                        if (r[tick % 12] == 0)
+                        {
+                            if(tick%12 == 0)
+                            lblF0.Text = AccessSequanceListBox.Items[counter].ToString() + " || " + r[tick];
+                            if (tick % 12 == 1)
+                                lblF1.Text = AccessSequanceListBox.Items[counter].ToString() + " || " + r[tick];
+                            if (tick % 12 == 2)
+                                lblF2.Text = AccessSequanceListBox.Items[counter].ToString() + " || " + r[tick];
+                            if (tick % 12 == 3)
+                                lblF3.Text = AccessSequanceListBox.Items[counter].ToString() + " || " + r[tick];
+                            if (tick % 12 == 4)
+                                lblF4.Text = AccessSequanceListBox.Items[counter].ToString() + " || " + r[tick];
+                            if (tick % 12 == 5)
+                                lblF5.Text = AccessSequanceListBox.Items[counter].ToString() + " || " + r[tick];
+                            if (tick % 12 == 6)
+                                lblF6.Text = AccessSequanceListBox.Items[counter].ToString() + " || " + r[tick];
+                            if (tick % 12 == 7)
+                                lblF7.Text = AccessSequanceListBox.Items[counter].ToString() + " || " + r[tick];
+                            if (tick % 12 == 8)
+                                lblF8.Text = AccessSequanceListBox.Items[counter].ToString() + " || " + r[tick];
+                            if (tick % 12 == 9)
+                                lblF9.Text = AccessSequanceListBox.Items[counter].ToString() + " || " + r[tick];
+                            if (tick % 12 == 10)
+                                lblF10.Text = AccessSequanceListBox.Items[counter].ToString() + " || " + r[tick];
+                            if (tick % 12 == 11)
+                                lblF11.Text = AccessSequanceListBox.Items[counter].ToString() + " || " + r[tick];
+                        }
+                        else 
+                        {
+                            r[tick] = 0;
+                        }
+                    }
                 }
 
                 tick++;
@@ -338,6 +397,12 @@ namespace Paging_Program
         private void Pb_clock_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form2 frm2 = new Form2();
+            frm2.Show();
         }
     }
 }
